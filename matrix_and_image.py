@@ -1,20 +1,20 @@
-# Scientific_Figure_Matplotlib
 
-This is a simple Python library for producing publication quality scientific figure.
+import numpy as np
 
-## Installation
+# Plotting
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+from matplotlib.patches import Rectangle
+from matplotlib.colors import LinearSegmentedColormap
+from matplotlib import colors
+from matplotlib.ticker import MultipleLocator
 
-Install the colormap cmcrameri from https://pypi.org/project/cmcrameri/ as well as matplotlib
-Just copy plotting_default.py and utils_colors.py
 
-```python
 import plotting_default
-from utils_colors import colorblind_list,lighten_color
-```
+from utils_colors import colorblind_list,lighten_color,cmc
 
-## Usage
 
-```python
+
 plt.figure(figsize=(15,15))
 # Now, create the gridspec structure, as required
 gs = gridspec.GridSpec(2,3, height_ratios=[1,0.05], width_ratios=[0.2,1,0.2])
@@ -38,5 +38,3 @@ ax1 = plt.subplot(gs[1,1]) # place it where it should be.
 cb = plt.colorbar(plt0, cax=ax1, orientation = 'horizontal',fraction=0.046, pad=0.04, ticklocation = 'bottom')
 cb.set_label(r'Colorbar !', labelpad=10)
 plt.show()
-```
-
